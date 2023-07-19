@@ -1,0 +1,20 @@
+# Default values for nodejs-welcome.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+secretName: regcred
+image:
+  repository: sathyap04/nodejs
+  tag: v1
+
+service:
+  name: node-app-svc
+  type: ClusterIP
+  port: 8080
+
+ingress:
+  enabled: true
+  className: "nginx"
+  hosts: chart-example.local
